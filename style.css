@@ -1,0 +1,421 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Fade-in global */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==================== NAVBAR ==================== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 176, 239);
+    padding: 0 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: slideDown 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideDown {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-50px); }
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+nav div img {
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+nav div img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav div p {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: white;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  border-bottom-color: white;
+  transform: scale(1.1);
+}
+
+
+/* ==================== SECCIÓN INICIO ==================== */
+
+.inicio {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(0, 176, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.inicio h1 {
+    color: white;
+    font-size: 50px;
+    animation: textSlide 1s ease forwards;
+}
+@keyframes textSlide {
+    from { opacity: 0; letter-spacing: -5px; }
+    to { opacity: 1; letter-spacing: 0; }
+}
+
+.inicio h3 {
+    color: white;
+    font-weight: 500;
+    animation: fadeInUp 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+.see-plans {
+    width: 30%;
+    min-width: 200px;
+    background: white;
+    color: rgb(0, 176, 239);
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+.see-plans:hover {
+    background: rgb(40, 138, 204);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ==================== ABOUT US ==================== */
+
+.about-us {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+.about-us img {
+    max-width: 300px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.about-us img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+.about-info h2 {
+    color: rgb(0, 176, 239);
+}
+.about-info p {
+    color: rgb(23, 99, 146);
+    max-width: 500px;
+}
+
+/* ==================== CARACTERISTICAS ==================== */
+
+.title {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.caracteristicas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    max-width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.caracteristicas article:hover {
+    transform: translateY(-8px);
+}
+.caracteristicas article img {
+    width: 100px;
+    background-color: rgb(40, 138, 204);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ==================== SERVICES ==================== */
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+.services article {
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(200, 200, 232, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 0.8s ease forwards;
+}
+.services article:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.services article:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes popIn {
+    to { opacity: 1; transform: scale(1); }
+}
+.services article img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.services article img:hover {
+    transform: scale(1.1);
+}
+.services article h3 {
+    color: rgb(40, 138, 204);
+}
+.services article p {
+    color: #333;
+}
+.services article a {
+    padding: 10px 20px;
+    background-color: rgb(0, 176, 239);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.services article a:hover {
+    background-color: rgb(40, 138, 204);
+    transform: scale(1.05);
+}
+
+/* ==================== CONTACT-US ==================== */
+
+.contact-us {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.contact-us div, .contact-us form {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+.contact-us div {
+    flex: 1 1 300px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-us h2 {
+    color: rgb(40, 138, 204);
+}
+.contact-us p {
+    color: #333;
+}
+.contact-us form {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+}
+.contact-us input,
+.contact-us textarea {
+    padding: 10px;
+    border: 1px solid rgb(131, 179, 221);
+    border-radius: 10px;
+    font-size: 16px;
+    color: rgb(40, 138, 204);
+    background-color: #f5faff;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+.contact-us input:focus,
+.contact-us textarea:focus {
+    box-shadow: 0 0 8px rgba(40, 138, 204, 0.4);
+}
+.contact-us input[type="submit"] {
+    background-color: rgb(64, 64, 162);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.contact-us input[type="submit"]:hover {
+    background-color: rgb(40, 40, 140);
+    transform: scale(1.05);
+}
+
+/* ==================== OWNER ==================== */
+
+.owner {
+    width: 100%;
+    text-align: center;
+}
+.owner img {
+    width: 200px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.owner img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* ==================== FOOTER ==================== */
+
+.footer-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgb(0, 176, 239);
+    color: white;
+    font-weight: 500;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+/* Por defecto, ocultamos el botón toggle */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+nav ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:1rem;
+}
+nav .menu-toggle {
+  display:none;
+}
+@media (max-width:768px){
+  nav ul {
+    display:none;
+    flex-direction:column;
+    background:#0096c7;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+  }
+  nav ul.show {
+    display:flex;
+    flex-direction: column;
+    height: 5px;
+  }
+  nav .menu-toggle {
+    display:block;
+    background:none;
+    border:none;
+    color:white;
+    font-size:2rem;
+  }
+}

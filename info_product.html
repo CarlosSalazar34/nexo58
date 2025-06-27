@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='detail.css') }}">
+</head>
+<body>
+  <main>
+    <article>
+      <div class="product-image">
+        <img src="{{ url_for('static', filename=image) }}" alt="Conexión de Alta Velocidad">
+      </div>
+      <div class="product-info">
+        <h1>{{ title }}</h1>
+        <p>
+          Nuestro servicio de conexión de alta velocidad garantiza una experiencia fluida en navegación, streaming y gaming.
+          Diseñado para hogares y empresas que necesitan estabilidad y rapidez en todo momento.
+        </p>
+        <ul>
+          <li>Velocidades de hasta 1 Gbps</li>
+          <li>Instalación rápida y sin complicaciones</li>
+          <li>Soporte técnico 24/7</li>
+          <li>Sin contratos forzosos</li>
+        </ul>
+        <a class="btn-contratar" href="https://wa.me/+584143012976?text={{ ('Hola estoy interesado en el servicio ' + title + ' de nexo58') | urlencode }}">Contratar ahora</a>
+        <!-- <a class="btn-contratar" href="https://wa.me/+584143012976?text=Hola estoy interesado en el servicio {{ title }} de nexo58">Contratar ahora</a> -->
+      </div>
+    </article>
+  </main>
+</body>
+</html>

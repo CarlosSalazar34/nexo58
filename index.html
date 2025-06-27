@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nexo58.com</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <nav>
+        <div class="title"><img src="{{ url_for('static', filename = 'icon.png') }}" alt="title"/>
+        <p>Nexo58</p></div>
+
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button> <!-- botón hamburguesa -->
+
+        
+        <ul>
+            <li><a href="#inicio" onclick="scrollToInicio()">Inicio</a></li>
+            <li><a href="#about-us" onclick="scrollToAboutUs()">Sobre nosotros</a></li>
+            <li><a href="#services" onclick="scrollToServices()">Servicios</a></li>
+            <li><a href="#contact" onclick="scrollToContact()">Contacto</a></li>
+        </ul>
+
+    </nav>
+    <section class="inicio" id="inicio">
+        <h1 class="typed-text">Conectamos tu <br>mundo a la mejor internet.</h1>
+        <h3>Servicio de internet confiable y veloz<br> para tu hogar o empresa</h3>
+        <a class="see-plans" href="#services" onclick="scrollToServices()">Ver planes</a>
+    </section>
+
+
+    <section class="about-us" data-aos="fade-up" id="about-us">
+        <img src="{{ url_for('static', filename='presentacion.jpg') }}" alt="personal"/>
+        <div class="about-info" data-aos="zoom-in">
+            <h2>¿Quiénes somos?</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident similique, aliquam id quos ullam quod nemo sunt rem fugit voluptatibus quaerat, autem maiores adipisci architecto excepturi, fuga assumenda saepe asperiores.</p>
+            <div class="caracteristicas">
+
+                <article>
+                    <img src="{{ url_for('static', filename='confiaza.png') }}" alt="confianza">
+                    <p>confianza</p>
+                </article>
+                
+                <article>
+                    <img src="{{ url_for('static', filename='velocidad.png') }}" alt="velocidad">
+                    <p>Velocidad</p>
+                </article>
+                
+                <article>
+                    <img src="{{ url_for('static', filename='local2.png') }}" alt="local">
+                    <p>Servicio local</p>
+                </article>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+    <div class="title" id="services"><h2>Servicios</h2></div>
+    <section class="services" data-aos="fade-up">
+
+        <article>
+            <img src="{{ url_for('static', filename='wifi-signal_88014.png') }}" alt="wifi">
+            <h3>Conexiones de alta Velocidad</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis numquam hic illum corporis magni, eos necessitatibus aliquam voluptates debitis iste nemo dignissimos assumenda distinctio rerum, vel autem, accusantium quae molestias?</p>
+            <a href="{{ url_for('info', title = 'Conexiones de alta  velocidad', image = 'wifi-signal_88014.png') }}">Mas info</a>
+        </article>
+
+        <article>
+            <img src="{{ url_for('static', filename='home-button_8303691.png') }}" alt="home">
+            <h3>Planes residenciales</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis numquam hic illum corporis magni, eos necessitatibus aliquam voluptates debitis iste nemo dignissimos assumenda distinctio rerum, vel autem, accusantium quae molestias?</p>
+            <a href="{{ url_for('info', title = 'Planes residenciales', image = 'home-button_8303691.png') }}">Mas info</a>
+        </article>
+        <article>
+            <img src="{{ url_for('static', filename='office_17790453.png') }}" alt="office">
+            <h3>Soluciones empresariales</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis numquam hic illum corporis magni, eos necessitatibus aliquam voluptates debitis iste nemo dignissimos assumenda distinctio rerum, vel autem, accusantium quae molestias?</p>
+            <a href="{{ url_for('info', title = 'Soluciones empresariales', image = 'office_17790453.png') }}">Mas info</a>
+        </article>
+        
+
+
+    </section>
+    <section class="contact-us" id="contact">
+        <div>
+            <h4>
+                Carlos Salazar
+            </h4>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, incidunt? Nesciunt incidunt alias saepe adipisci sed ea, voluptatum maxime id dolorum tempore nihil amet ex voluptas nulla! Earum, sit laudantium.
+            </p>
+            <div class="owner">
+                <img src="{{ url_for('static', filename = 'carlos.jpg') }}" alt="hijo">
+            </div>
+        </div>
+        <form action="/message-client" method="post">
+            <h2>Contacto</h2>
+            <input type="text" placeholder="Nombre" name="client-name" required>
+            <input type="email" placeholder="email" name="client-mail" required>
+    <textarea name="message" id="message-client" placeholder="Mensaje" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Nexo58. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script>
+    const menuToggle = document.querySelector('.menu-toggle')
+    const navMenu = document.querySelector('nav ul')
+
+    menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show')
+    })
+
+    const scrollToInicio = () => {
+        const inicio = document.getElementById("inicio");
+        inicio.scrollIntoView({behavior: 'smooth'});
+    }
+
+    const scrollToAboutUs = () => {
+         const aboutUs = document.getElementById("about-us");
+        aboutUs.scrollIntoView({behavior: 'smooth'});
+
+    }
+
+    const scrollToServices = () => {
+        const Services = document.getElementById("services");
+        Services.scrollIntoView({behavior: "smooth"});
+    }
+
+    const scrollToContact = () => {
+        const Contact = document.getElementById("contact");
+        Contact.scrollIntoView({behavior: "smooth"});
+    }
+
+
+
+
+    </script>
+</body>
+</html>

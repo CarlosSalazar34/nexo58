@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensaje Enviado</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='message.css') }}" />
+</head>
+<body>
+  <div class="mensaje">
+    <h1>Mensaje enviado correctamente</h1>
+    <a href="{{ url_for('index') }}" class="btn">Volver a la página principal</a>
+  </div>
+</body>
+</html>
