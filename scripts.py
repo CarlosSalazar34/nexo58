@@ -1,9 +1,6 @@
 from email.message import EmailMessage
 import smtplib as sm
 
-EMAIL_EMISOR = "carloseliassalazaryunes@gmail.com"
-PASSWORD_EMISOR = "qjtn asvz iixw vmma"
-EMAIL_RECEPTOR = "carlosericksalazar@gmail.com"
 
 def enviar_gmail(name, body):
     message = body
